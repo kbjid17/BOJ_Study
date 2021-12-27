@@ -4,30 +4,34 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main {
-
-	static int N;
+public class Main_2_메모리초과 {
 	static int[] ar;
-	static int[] dp;
-	static int num = Integer.MIN_VALUE;
-	static StringBuilder sb = new StringBuilder();
+	static long[][] dp;
+	static long ans = Long.MIN_VALUE;
+	static int N;
 	public static void main(String[] args) throws Exception{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
 		N = Integer.parseInt(br.readLine());
 		
 		ar = new int[N];
-		dp = new int[N];
-		
+		dp = new long[100000][100000];
 		StringTokenizer st = new StringTokenizer(br.readLine());
+		
 		for (int i = 0; i < N; i++) {
 			ar[i] = Integer.parseInt(st.nextToken());
-			if(i == 0) {
-				dp[i] = Math.max(0, ar[0]);
-			} else {
-				dp[i] = Math.max(dp[i-1], dp[i-1]+ar[i]);
-			}
+			dp[i][i] = ar[i];
+			ans = Math.max(ans, dp[i][i]);
 		}
 		
-		System.out.println(dp[N-1]);
+		
+		for (int i = 0; i < N; i++) {
+			for (int j = i+1; j < N; j++) {
+				dp[i][j] = dp[i][j-1]+ar[j];
+				ans = Math.max(ans, dp[i][j]);
+			}
+		}
+		System.out.println(ans);
 	}
+
 }
