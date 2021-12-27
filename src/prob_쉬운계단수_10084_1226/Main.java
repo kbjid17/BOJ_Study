@@ -1,4 +1,4 @@
-package prob__쉬운계단수_10084_1226;
+package prob_쉬운계단수_10084_1226;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

@@ -1,4 +1,4 @@
-package prob_12920_평범한배낭2;
+package prob_12920_평범한배낭2_못품;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
