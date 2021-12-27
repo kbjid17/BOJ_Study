@@ -1,4 +1,4 @@
-package prob_1722_순열의순서_2트;
+package prob_1722_순열의순서;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

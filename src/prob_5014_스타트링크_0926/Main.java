@@ -1,4 +1,4 @@
-package prob_5014_스타트링크_0926해결;
+package prob_5014_스타트링크_0926;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

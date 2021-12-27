@@ -1,4 +1,4 @@
-package prob_13707_합분해2_합분해와같은코드.copy;
+package prob_13707_합분해2_합분해와같은코드;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

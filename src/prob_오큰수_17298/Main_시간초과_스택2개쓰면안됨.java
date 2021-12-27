@@ -1,11 +1,11 @@
-package prob_17298_오큰수_스택2개쓰면안됨;
+package prob_오큰수_17298;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
-public class Main {
+public class Main_시간초과_스택2개쓰면안됨 {
 
 	static Stack<Integer> sk = new Stack<Integer>(); //수열 선언
 	static Stack<Integer> sk_2 = new Stack<Integer>(); //오큰수를 찾기 위한 여정에 필요한 수열의 복제품

@@ -1,11 +1,11 @@
-package prob_17298_오큰수_2트;
+package prob_오큰수_17298;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
-public class Main {
+public class Main_3_풀이법보고해결 {
 
 	static Stack<Integer> sk = new Stack<Integer>(); //수열 선언
 	//스택 2개 쓰면 안됨!!!(O(N^2)로 인해 시간초과 발생)
@@ -13,7 +13,7 @@ public class Main {
 	static int N;
 	static int nge = - 1;
 	static int[] ar;
-	static StringBuilder sb;
+	static StringBuilder sb = new StringBuilder();
 	static Stack<Integer> stc = new Stack<Integer>();
 	public static void main(String[] args) throws Exception{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -25,19 +25,19 @@ public class Main {
 		for (int i = 0; i < N; i++) {
 			ar[i] = Integer.parseInt(st.nextToken());
 		}
-		
-		for (int i = 0; i < N; i++) {
-			stc.push(-1);
-			for (int j = i; j < N; j++) {
-				if(ar[j] > ar[i]) {
-					stc.pop();
-					stc.push(ar[j]);
-					break;
-				}
+		for (int i = 0; i < ar.length; i++) {
+			while(!stc.empty() && ar[stc.peek()] < ar[i]) {
+				ar[stc.pop()] = ar[i];
 			}
+		 
+			stc.push(i);
 		}
-		for (int a : stc) {
-			System.out.print(a + " ");
+		while(!stc.isEmpty()) {
+			ar[stc.pop()] = -1;
 		}
+		for (int i = 0; i < N; i++) {
+			sb.append(ar[i]).append(" ");
+		}
+		System.out.println(sb);
 	}
 }

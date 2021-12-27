@@ -1,11 +1,11 @@
-package prob_1722_순열의순서_기본완탐_너무느림;
+package prob_1722_순열의순서;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class Main {
+public class Main_시간초과 {
 //	생각해보니 완탐으론 힘들것같다..
 //	혹시나 int로 감당을 못해서 long를 사용해보려고 했으나, 배열의 크기에도 한계가 있어서 안되는 것 같다.(애초에 크기 설정이 기본 int로 되어 있는 것 같다.
 //	입력할 숫자(count)를 long로 집어두고
