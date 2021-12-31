@@ -2,21 +2,17 @@ package Prob_17135_캐슬디팬스_아직못품;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.Stack;
 import java.util.StringTokenizer;
 
 public class Main {
 	static int N,M,D,cnt,maxCnt = Integer.MIN_VALUE;
 	static int[][] ar;
 	static int[] tgt;
-	static int ars,time;
 	static int[][] enemy;
 	static int[] dy = {0,-1,0}; //궁수가 아랫쪽을 보는 전개는 존재하지 않음.
 	static int[] dx = {-1,0,1};
-	static boolean istop;
-	static Queue<archer> queue = new LinkedList<>();
+	static Stack<archer> queue = new Stack<>();
 	public static void main(String[] args) throws Exception{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
@@ -31,10 +27,6 @@ public class Main {
 			st = new StringTokenizer(br.readLine());
 			for (int j = 0; j < M; j++) {
 				ar[i][j] = Integer.parseInt(st.nextToken());
-				if(!istop && ar[i][j] == 1) {
-					istop = true;
-					time = i;
-				}
 			}
 		}
 		
@@ -47,7 +39,6 @@ public class Main {
 			// 궁수의 위치를 정하면 ar[-1] 쪽에 궁수가 위치해있다고 가정하고 모든 적이 내려올때까지 공격을 진행
 			// 궁수로부터 D만큼의 거리 영역을 BFS로 탐색하며 적이 있으면(1) 사살(0으로 만듬)
 //			System.out.println(Arrays.toString(tgt));
-			System.out.println(Arrays.toString(tgt));
 			bfs(tgt);
 			return;
 		}
@@ -68,12 +59,12 @@ public class Main {
 		}
 		for (int t = N; t > 0 ; t--) { //적이 내려오는 방향은 배열 복사를 해야 하므로, 반대로 궁수가 검사하는 칸을 올라가는 방향으로 활용
 			for (int i = 0; i < tgt.length; i++) {
-				queue.offer(new archer(t,tgt[i],0)); //궁사의 위치 : [t][tgt[i]]
+				queue.push(new archer(t,tgt[i],0)); //궁사의 위치 : [t][tgt[i]]
 			}
 			
 			
 			while(!queue.isEmpty()) {
-				archer a = queue.poll();
+				archer a = queue.pop();
 //				System.out.println(a.y + " " + a.x +" " + a.d);
 				//한턴당 최대 3마리의 적을 잡을 수 있다 가정
 				// 정해진 범위(D) 만큼만 이동
@@ -82,16 +73,16 @@ public class Main {
 					int ny = a.y + dy[1];
 					int nx = a.x + dx[1];
 					if(ny < 0 || ny >= N || nx < 0 || nx >= M ) continue;
-					if(enemy[ny][nx] != 0) {
+					if(enemy[ny][nx] != 0) { // 적이 있으면(여러 궁수가 같은 적을 노릴 수 있음)
 //						System.out.println(a.y + " " + a.x +" " + a.d);
 //						System.out.println(ny + " " + nx);
-						if(enemy[ny][nx] ==1) {
-							cnt++;
+						if(enemy[ny][nx] == 1) {
+//							System.out.println("잡았다 " + ny + " " + nx);
 							enemy[ny][nx] = 2; // 적이 있었는데 잡았다는 뜻
 						}
 						continue; // 적을 잡았으니 더이상 쓸 필요 없음.
 					}
-					queue.offer(new archer(ny,nx,a.d+1)); // 궁수의 위치를 이동시킴
+					queue.push(new archer(ny,nx,a.d+1)); // 궁수의 위치를 이동시킴
 				}
 				else if(a.d > 0) {
 					for (int i = 0; i < 3; i++) {
@@ -100,23 +91,25 @@ public class Main {
 						if(ny < 0 || ny >= N || nx < 0 || nx >= M ) continue;
 						if(enemy[ny][nx] != 0) {
 							if(enemy[ny][nx] == 1) {
-								cnt++;
+//								System.out.println("잡았다 " + ny + " " + nx);
 								enemy[ny][nx] = 2; // 적이 있었는데 잡겠다는 뜻(여러 궁수가 같은 적을 노릴 수도 있음)
 							}
 							break; // 적을 잡았으니 더이상 쓸 필요 없음.
 						}
-						queue.offer(new archer(ny,nx,a.d+1)); // 궁수의 위치를 이동시킴
+						queue.push(new archer(ny,nx,a.d+1)); // 궁수의 위치를 이동시킴
 					}
 				}
-				
-				for (int i = 0; i < N; i++) {
-					for (int j = 0; j < M; j++) {
-						if(enemy[i][j] ==2) enemy[i][j] = 0; // 목표로 지정된 적을 사살(적이 사라짐)
+			} 
+			for (int i = 0; i < N; i++) {
+				for (int j = 0; j < M; j++) {
+					if(enemy[i][j] ==2) {
+						enemy[i][j] = 0; // 목표로 지정된 적을 사살(적이 사라짐)
+						cnt++;
 					}
 				}
-			}  
+			}
 		} // 방어가 끝났으면 잡은 적 수를 출력
-		System.out.println(cnt);
+//		System.out.println(cnt);
 		maxCnt = Math.max(maxCnt, cnt);
 	}
 
@@ -124,7 +117,7 @@ public class Main {
 		int y;
 		int x;
 		int d;
-		public archer(int y, int x, int d) {
+		public archer(int y, int x, int d) {	
 			super();
 			this.y = y;
 			this.x = x;
