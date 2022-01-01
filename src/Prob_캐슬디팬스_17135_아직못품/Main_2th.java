@@ -1,4 +1,4 @@
-package Prob_17135_캐슬디팬스_아직못품;
+package Prob_캐슬디팬스_17135_아직못품;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
