@@ -1,10 +1,10 @@
-package prob_가장긴증가하는부분수열_11053;
+package prob_가장긴감소하는부분수열_11722;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main_최장길이감소하는부분수열 {
+public class Main {
 	static int N, min = Integer.MIN_VALUE;
 	static int[] ar;
 	static int[] lis;
@@ -22,13 +22,13 @@ public class Main_최장길이감소하는부분수열 {
 			lis[i] = 1;
 			for (int j = N-1; j >= i; j--) {
 				if(ar[j] < ar[i]) {
-					System.out.println(ar[j]);
+//					System.out.println(ar[j]);
 					lis[i] = Math.max(lis[i], lis[j] + 1);
 				}
 			}
 			min = Math.max(min, lis[i]);
-			System.out.println("min 값 : " + min);
-			System.out.println();
+//			System.out.println("min 값 : " + min);
+//			System.out.println();
 		}
 		System.out.println(min);
 	}
