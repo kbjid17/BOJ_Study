@@ -51,7 +51,7 @@ public class Main_4th_해결 {
 				}
 			}
 			
-			dfs();
+			bfs();
 			return;
 		}
 		
@@ -61,7 +61,7 @@ public class Main_4th_해결 {
 		}
 	}
 	
-	static void dfs() {
+	static void bfs() {
 		
 		enemy = 0;
 		for (int d = N+1; d > 0; d--) {
