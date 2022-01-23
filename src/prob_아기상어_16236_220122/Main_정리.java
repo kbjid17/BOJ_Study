@@ -8,7 +8,7 @@ import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class Main_정리 {
-	static int N,cnt,time; // cnt : 먹을 수 있는 물고기의 마릿수 , time : 물고기를 먹는 데 걸리는 시간
+	static int N,cnt,time;
 	static int[][] ar;
 	static ArrayList<fish> fishList = new ArrayList<fish>();
 	static Shark shark;
@@ -29,7 +29,7 @@ public class Main_정리 {
 					shark = new Shark(i,j,2,0);
 				}
 			}
-		} // 입력 끝
+		}
 		System.out.println(game());
 	}
 	
@@ -41,7 +41,7 @@ public class Main_정리 {
 				eat(0);
 			}
 			else if(fishList.size() >= 2) {
-					int min = Integer.MAX_VALUE; // 거리의 최솟값
+					int min = Integer.MAX_VALUE;
 					int mincount = 0;
 					for (fish f : fishList) {
 						if(min > f.eatdist) {
@@ -50,18 +50,18 @@ public class Main_정리 {
 						}
 						else if(min == f.eatdist) mincount++;
 					}
-					if(mincount == 1) { // 최소 거리를 가지는 물고기가 한마리만 있음
-						for (int i = 0; i < fishList.size(); i++) { // 인덱싱이 필요하니 for문 사용
-							if(fishList.get(i).eatdist == min) { // 최소 거리 물고기를 찾았다면
-								eat(i); // 해당 물고기를 먹어치움
+					if(mincount == 1) {
+						for (int i = 0; i < fishList.size(); i++) {
+							if(fishList.get(i).eatdist == min) {
+								eat(i);
 								break;
 							}
 						}
 					}
 					else if(mincount >= 2) {
 						int upcnt = 0;
-						int upmin = Integer.MAX_VALUE; // 2순위 : 가장 위에 있는 물고기
-						int leftmin = Integer.MAX_VALUE; // 3순위 : 가장 왼쪽에 있는 물고기
+						int upmin = Integer.MAX_VALUE;
+						int leftmin = Integer.MAX_VALUE;
 						for (int i = 0; i < fishList.size(); i++) {
 							if(fishList.get(i).eatdist == min) {
 								if(fishList.get(i).y == upmin) {
@@ -111,7 +111,7 @@ public class Main_정리 {
 				int ny = a[0] + dy[i];
 				int nx = a[1] + dx[i];
 				if(ny < 0 || ny >= N || nx < 0 || nx >= N || visit[ny][nx] || shark.level < ar[ny][nx]) continue;
-				if(ar[ny][nx] > 0 && ar[ny][nx] < shark.level) { //먹을 수 있는 물고기인 경우,이 물고기를 먹는 데 필요한 값 : 물고기 위치(y,x), 이 물고기를 먹는 데 이동해야 할 거리
+				if(ar[ny][nx] > 0 && ar[ny][nx] < shark.level) {
 					fishList.add(new fish(ny,nx,0,a[2]+1));
 				}
 				visit[ny][nx] = true;
@@ -120,7 +120,7 @@ public class Main_정리 {
 		}
 	}
 	
-	static void eat(int n) { //먹을 물고기가 있는 ArrayList 위치
+	static void eat(int n) {
 		time += fishList.get(n).eatdist;
 		ar[shark.y][shark.x] = 0;
 		shark.y = fishList.get(n).y;
@@ -138,7 +138,7 @@ public class Main_정리 {
 		int y;
 		int x;
 		int level;
-		int eatcount; // 이 물고기를 먹기 위해 이동해야 하는 거리
+		int eatcount;
 		
 		public Shark(int y, int x, int level, int eatcount) {
 			super();
@@ -148,7 +148,7 @@ public class Main_정리 {
 			this.eatcount = eatcount;
 		}
 	}
- static class fish { //y,x 거리 정보를 가짐
+ static class fish {
 	 int y;
 	 int x;
 	 int dist;
