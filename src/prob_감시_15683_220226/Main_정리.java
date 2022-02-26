@@ -149,9 +149,5 @@ public class Main_정리 {
 			this.n = n;
 			this.d = d;
 		}
-		@Override
-		public String toString() {
-			return "camera [y=" + y + ", x=" + x + ", n=" + n + ", d=" + d + "]";
-		}
 	}
 }

@@ -177,12 +177,5 @@ public class Main {
 			this.n = n;
 			this.d = d;
 		}
-		@Override
-		public String toString() {
-			return "camera [y=" + y + ", x=" + x + ", n=" + n + ", d=" + d + "]";
-		}
-		
-		
-		
 	}
 }
