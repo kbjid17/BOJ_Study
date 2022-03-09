@@ -1,4 +1,4 @@
-package prob_스타트택시_19238_220304;
+package prob_스타트택시_19238_220304_아직못품;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -8,8 +8,8 @@ import java.util.StringTokenizer;
 
 public class Main {
 	static Queue<taxi> queue = new LinkedList<taxi>();
-	static int[] dy = {-1,0,0,1};
-	static int[] dx = {0,-1,1,0};
+	static int[] dy = {-1,0,1,0};
+	static int[] dx = {0,-1,0,1};
 	static int N,M,F; // N : 배열 크기(N*N 배열) , M : 승객 수, F : 기름 양
 	static int r,c; // 택시의 위치 [r][c]
 	static int ans;
