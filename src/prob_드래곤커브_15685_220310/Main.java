@@ -30,7 +30,7 @@ public class Main {
 			for (int j = dir[i].size()-1; j >= 0; j--) {
 				dir[i].add((dir[i].get(j) + 1)%4);
 			}
-			
+//			System.out.println(dir[i]);
 		}
 		ar = new int[101][101];
 		selected = new boolean[101][101];
