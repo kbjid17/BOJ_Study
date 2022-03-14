@@ -38,10 +38,10 @@ public class Main {
 		for (int i = 4; i <= a; i++) {
 			for (int j = 1; j <= 3; j++) {
 				for (String s : list[i-j]) { //i = 4 => j = 1 
-//					ArrayList[i-1] 에 있는 수식에 +1을
-//					 ArrayList[i-2] 에 있는 수식에 +2을
-//					 ArrayList[i-3] 에 있는 수식에 +3을
-					list[i].add(s + "+" + j);
+//					ArrayList[i-1] 에 있는 수식에 +1을 (ex i == 4, j == 1 => ArrayList[4-1]에 +1)
+//					 ArrayList[i-2] 에 있는 수식에 +2을 (ex i == 4, j == 2 => ArrayList[4-2]에 +2)
+//					 ArrayList[i-3] 에 있는 수식에 +3을 (ex i == 4, j == 2 => ArrayList[4-3]에 +3)
+					list[i].add(s + "+" + j); 
 				}
 			}
 		}
