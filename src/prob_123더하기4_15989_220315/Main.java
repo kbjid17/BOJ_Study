@@ -20,7 +20,7 @@ public class Main {
 			ar[i] = 1+(ar[i-2] - ar[i-5])+(ar[i-3]);
 //			System.out.println(ar[i]);
 		}
-		for (int i = 0; i < N; i++) {
+		for (int i = 0; i < N; i++) { 
 			int n = Integer.parseInt(br.readLine());
 			System.out.println(ar[n]);
 		}
