@@ -7,19 +7,19 @@ import java.util.Collections;
 import java.util.StringTokenizer;
 
 public class Main {
-	static int a,b;
+	static int n,m;
 	static int[][] ar;
 	static ArrayList<String>[] list;
 	public static void main(String[] args) throws Exception{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		
-		a = Integer.parseInt(st.nextToken());
-		b = Integer.parseInt(st.nextToken());
+		n = Integer.parseInt(st.nextToken());
+		m = Integer.parseInt(st.nextToken());
 		
-		list = new ArrayList[a+3];
+		list = new ArrayList[n+3];
 		
-		for (int i = 0; i < a+3; i++) {
+		for (int i = 0; i < n+3; i++) {
 			list[i] = new ArrayList<String>();
 		}
 		// List 1에 해당하는 값을 집어넣음
@@ -35,22 +35,22 @@ public class Main {
 		list[3].add("3");
 		
 		//1,2,3은 모두 정해졌으므로 그 다음을 보면
-		for (int i = 4; i <= a; i++) {
+		for (int i = 4; i <= n; i++) {
 			for (int j = 1; j <= 3; j++) {
 				for (String s : list[i-j]) { //i = 4 => j = 1 
 //					ArrayList[i-1] 에 있는 수식에 +1을 (ex i == 4, j == 1 => ArrayList[4-1]에 +1)
 //					 ArrayList[i-2] 에 있는 수식에 +2을 (ex i == 4, j == 2 => ArrayList[4-2]에 +2)
 //					 ArrayList[i-3] 에 있는 수식에 +3을 (ex i == 4, j == 2 => ArrayList[4-3]에 +3)
-					list[i].add(s + "+" + j); 
+					list[i].add(j + "+" + s); 
 				}
 			}
 		}
-		if(list[a].size() < b) {
+		if(list[n].size() < m) {
 			System.out.println(-1);
 		}
 		else {
-			Collections.sort(list[a]);
-			System.out.println(list[a].get(b-1));
+//			Collections.sort(list[n]);
+			System.out.println(list[n].get(m-1));
 		}
 		/*
 		 1. ArrayList<String> 배열을 만듬
