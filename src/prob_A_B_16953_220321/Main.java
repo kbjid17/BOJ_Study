@@ -16,7 +16,7 @@ public class Main {
 		
 		// 그리디로 한번 풀어보자
 		while(M > 0) {
-			
+			 
 			if(M == N) {
 				cnt++;
 				System.out.println(cnt);
