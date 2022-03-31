@@ -1,4 +1,4 @@
-package prob_1로만들기_12852_220327;
+package prob_1로만들기2_12852_220327;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
