@@ -2,17 +2,33 @@ package prob_공통부분문자열_5582_220401;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.ArrayDeque;
-import java.util.Deque;
 
 public class Main {
-	static String a,b;
-	static Deque<Character> d = new ArrayDeque<Character>();
+	static String[] a,b;
+	static int max;
+	static int[][] ar;
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		a = br.readLine();
-		b = br.readLine();
+		a = br.readLine().split("");
+		b = br.readLine().split("");
+		ar = new int[a.length][b.length];
 		
+		for (int i = 0; i < a.length; i++) {
+			for (int j = 0; j < b.length; j++) {
+				if(i == 0) {
+					if(a[i].equals(b[j])) ar[i][j] = 1;
+				}
+				else {
+					if(a[i].equals(b[j])) {
+						if(j ==0) ar[i][j] = 1;
+						else {
+							ar[i][j] = ar[i-1][j-1]+1;
+						}
+					}
+				}
+				max = Math.max(max, ar[i][j]);
+			}
+		}
 		//두 문자열의 공통 부분 문자열 중 가장 긴 녀석을 꺼내야 함
 		/*
 		 공통 부분 문자열이 뭐지?
@@ -25,19 +41,8 @@ public class Main {
 		 - 길이 n에서 더이상 공통되는 문자열이 확인되지 않을 경우 n-1이 최대 길이가 됨.
 		 최대 길이 4000일 경우, ABCDEA...AAA // ABCDEA...AAA (A문자열==B문자열)일 경우 답은 4000이 되어야 함. 
 		 */
-		int ln = 0; // a와 b의 길이를 구하고 둘 중 작은 값을 공통 부분 문쟈열의 최대 길이로 잡음
-		if(a.length() <= b.length()) {
-			ln = a.length();
-		}
-		else {
-			ln = b.length();
-		}
-		
-		for (int i = 1; i <= ln; i++) {
-			for (int j = 0; j < i; j++) {
-				d.offer(a.charAt(0));
-			}
-		}
+		// 찾아보니 알고리즘이 따로 있었음!!
+		System.out.println(max);
 	}
 
 }
