@@ -134,6 +134,7 @@ public class Main_정리 {
 		}
 		ans = Math.max(ans, amount);
 	}
+	
 	static class Node {
 		int y;
 		int x;
