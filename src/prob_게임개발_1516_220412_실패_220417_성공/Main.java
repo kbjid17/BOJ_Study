@@ -1,4 +1,4 @@
-package prob_게임개발_1516_220412_실패;
+package prob_게임개발_1516_220412_실패_220417_성공;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
