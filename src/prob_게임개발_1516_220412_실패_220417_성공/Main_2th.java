@@ -44,23 +44,31 @@ public class Main_2th {
 			System.out.println(list[i]);
 		}
 		
+		
+		// 위상정렬 start
+		
 		while(!q.isEmpty()) {
+			// 초기 time_after = 0
 			int now = q.poll();
-			for (int next : list[now]) {
-				
+			for (int next : list[now]) { // 2,3,4
+				// next : 3
 				time_after[next] = Math.max(time_after[next], time_after[now] + time[now]);
+				//time_after[3] = 10; , [4] = 10 ,[2] = 10;
+				
+				/*
+				 now = 3 (4,5)
+				 time_after[4] = max(10,4+10) == 14
+				 
+				 
+				 */
 				in[next]--;
-				if(in[next] == 0) q.offer(next);
+				if(in[next] == 0) q.offer(next); // 2,3 이 들어감
 			}
 		}
+		
 		for (int i = 1; i <= T; i++) {
 			System.out.println(time[i] + time_after[i]);
 		}
-		/*
-		 list size가 0인 것부터 queue에 삽입.
-		 q 안에 있는 정점을 가지고 있는 다른 정점에 q 안에 있는 정점의 시간을 더함
-		 더할 때, q 안에 있는 정점이 거쳐온 정점 값을 
-		 */
 }
 
 }
