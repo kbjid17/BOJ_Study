@@ -59,6 +59,7 @@ public class Main {
 			 매 봄마다 양분을 얻어먹으며,
 			 봄에 [y][x]의 나무들에게 양분을 줘야 함.
 			 */
+			
 		}
 		
 		for (int t = 0; t < K; t++) {
@@ -89,7 +90,7 @@ public class Main {
 				}
 			}
 			
-			// 2단계. 여름 : 봄에 죽은 나무를 양분으로 변하게 함 (죽은 나무임을 알 수 있어야 할듯!
+			// 2단계. 여름 : 봄에 죽은 나무를 양분으로 변하게 함 (죽은 나무임을 알 수 있어야 할듯!)
 			// (각 죽은 나무마다 나이를 2로 나눈 값이 나무가 있던 칸에 양분으로 추가됨. 소숫점 아래는 버림)
 			// (int값으로 ㄱㄱ)
 			for (int i = 1; i <= N; i++) {
@@ -130,8 +131,8 @@ public class Main {
 					area[i][j] += ar[i][j];
 				}
 			}
-			
 		}
+		
 		// k년후, 살아남은 나무는 몇그루인가!
 		for (int i = 1; i <= N; i++) {
 			for (int j = 1; j <= N; j++) {
@@ -158,14 +159,12 @@ public class Main {
 		@Override
 		public int compareTo(tree t) {
 			if(t.age < age) {
-				return 1;
+				return 1; // 앞으로 이동( 0 번 요소 vs 1번 요소 ~ n-2번 요소 vs n-1번 요소 )
 			}
 			else if(t.age > age) {
-				return -1;
+				return -1; // 뒤로 이동 ( 0 번 요소 vs 1번 요소 ~ n-2번 요소 vs n-1번 요소 )
 			}
 			return 0;
 		}
-		
-		
 	}
 }
