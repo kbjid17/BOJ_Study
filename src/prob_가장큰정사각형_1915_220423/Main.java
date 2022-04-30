@@ -3,7 +3,7 @@ package prob_가장큰정사각형_1915_220423;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
-// DP(해설 보고 해결)
+
 public class Main {
 
 	static int N,M;
