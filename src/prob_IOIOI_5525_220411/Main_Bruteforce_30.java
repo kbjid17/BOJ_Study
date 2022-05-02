@@ -3,7 +3,7 @@ package prob_IOIOI_5525_220411;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class Main {
+public class Main_Bruteforce_30 {
 	static int n,m,ans;
 	
 	static String[] str;
