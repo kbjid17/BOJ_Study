@@ -58,9 +58,6 @@ public class Main_3th_정리 {
 		}
 
 		System.out.println(ans);
-		
-		
-
 	}
 	
 	static void move(int sny,int snx,fish[][] ar,fish[] info,int size) {
