@@ -120,7 +120,6 @@ public class Main {
 					return -1;
 				}
 				else { //블록의 크기가 같은 경우가 여러개인 경우 -> 
-					
 					if(o1.rainbow > o2.rainbow) {
 						return 1;
 					}
@@ -146,9 +145,7 @@ public class Main {
 					}
 				}
 			}
-			
 		});
-
 		//2. 1 과정에서 찾은 블록 그룹의 모든 블록을 제거
 		for (int[] is : groupbox.get(groupbox.size()-1).block) {
 			ar[is[0]][is[1]] = -2;
