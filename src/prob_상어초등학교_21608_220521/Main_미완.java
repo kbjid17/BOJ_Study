@@ -1,4 +1,4 @@
-package prob_상어초등학교_21608;
+package prob_상어초등학교_21608_220521;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
