@@ -14,6 +14,7 @@ public class Main_3th {
 		n = Integer.parseInt(st.nextToken()); // 세로선의 개수
 		m = Integer.parseInt(st.nextToken()); // 가로선의 개수
 		h = Integer.parseInt(st.nextToken()); // 세로선마다 놓을 수 있는 위치의 개수
+		
 		for (int i = 0; i < m; i++) {
 			st = new StringTokenizer(br.readLine());
 			int a = Integer.parseInt(st.nextToken());
