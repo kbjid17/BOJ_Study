@@ -2,7 +2,6 @@ package prob_가운데를말해요_1655_220524;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.PriorityQueue;
 

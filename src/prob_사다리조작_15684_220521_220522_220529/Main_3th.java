@@ -12,8 +12,8 @@ public class Main_3th {
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		
 		n = Integer.parseInt(st.nextToken()); // 세로선의 개수
-		m = Integer.parseInt(st.nextToken()); // 가로선의 개수
-		h = Integer.parseInt(st.nextToken()); // 세로선마다 놓을 수 있는 위치의 개수
+		m = Integer.parseInt(st.nextToken()); // 세로선마다 놓을 수 있는 위치의 개수
+		h = Integer.parseInt(st.nextToken()); // 가로선의 개수(높이)
 		
 		for (int i = 0; i < m; i++) {
 			st = new StringTokenizer(br.readLine());
@@ -28,7 +28,6 @@ public class Main_3th {
 		if(ans >= 4) ans = -1;
 		System.out.println(ans);
 	}
-
 	
 	static void dfs(int cnt, int y, int x) {
 		if(cnt >= ans) return; //ans가 바뀌기 전에는 4이므로 4 이상이 되면 볼 필요가 없음
