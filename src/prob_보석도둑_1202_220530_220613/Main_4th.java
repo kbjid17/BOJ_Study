@@ -1,4 +1,4 @@
-package prob_보석도둑_1202_220530_실패;
+package prob_보석도둑_1202_220530_220613;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
