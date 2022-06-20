@@ -7,7 +7,7 @@ import java.util.StringTokenizer;
 
 public class Main {
 	static int N,M,ans = Integer.MAX_VALUE, min_value = Integer.MAX_VALUE; // 답(최소 개수), 최소 가격
-	static int pk_min = Integer.MAX_VALUE, min = Integer.MIN_VALUE;
+//	static int pk_min = Integer.MAX_VALUE, min = Integer.MIN_VALUE;
 	static int[][] ar;
 	public static void main(String[] args) throws Exception{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
