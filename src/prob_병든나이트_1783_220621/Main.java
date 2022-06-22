@@ -5,8 +5,6 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class Main {
-	static int[] dy = {-2,-1,1,2};
-	static int[] dx = {1,2,2,1};
 	static long N,M;
 	static Long ans = Long.MIN_VALUE;
 	public static void main(String[] args) throws Exception {
@@ -15,19 +13,15 @@ public class Main {
 		
 		N = Long.parseLong(st.nextToken());
 		M = Long.parseLong(st.nextToken());
-		
 		/*
 		 	2칸 위로, 1칸 오른쪽
 			1칸 위로, 2칸 오른쪽
 			1칸 아래로, 2칸 오른쪽
 			2칸 아래로, 1칸 오른쪽 
 		 */
-		
 		move();
-		
 		System.out.println(ans);
 	}
-
 	
 	static void move() {
 		if(N == 1) {
@@ -43,14 +37,11 @@ public class Main {
 				return;
 			}
 		}
-		
 		else if(N >= 3) {
 			if(M < 7) ans = Math.min(4, M);
 			else {
 				ans = M-7+5;
 			}
 		}
-		
 	}
-	
 }
