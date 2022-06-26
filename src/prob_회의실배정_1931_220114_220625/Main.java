@@ -1,4 +1,4 @@
-package prob_회의실배정_1931_220114;
+package prob_회의실배정_1931_220114_220625;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
