@@ -66,8 +66,6 @@ public class Main_틀림 {
 						}
 					}
 				}
-			
-			
 		}
 		return val;
 	}
