@@ -9,7 +9,6 @@ import java.util.StringTokenizer;
 public class Main_정리 {
 	static int N,K;
 	static int[] ar;
-	static boolean[] select;
 	static ArrayList<Integer> list = new ArrayList<Integer>();
 	static Stack<Integer> stack = new Stack<Integer>();
 	public static void main(String[] args) throws Exception{
@@ -19,7 +18,6 @@ public class Main_정리 {
 		K = Integer.parseInt(st.nextToken()); 
 		
 		ar = new int[K];
-		select = new boolean[K];
 		int cnt = 0;
 		st = new StringTokenizer(br.readLine());
 		for (int i = 0; i < K; i++) {
@@ -35,7 +33,7 @@ public class Main_정리 {
 
 					for (int j = 0; j < list.size(); j++) { 
 						boolean use = false;
-						for (int k = i+1; k < ar.length; k++) { 
+						for (int k = i+1; k < ar.length; k++) {
 							if(ar[k] == list.get(j)) {
 								use = true;
 								break;
