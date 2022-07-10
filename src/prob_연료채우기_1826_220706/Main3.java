@@ -53,7 +53,6 @@ public class Main3 {
 				currentfuel += fuelpq.poll();
 				ans++;
 			}
-			
 		}
 		System.out.println(ans);
 	}
