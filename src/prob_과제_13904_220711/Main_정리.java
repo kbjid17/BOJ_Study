@@ -17,11 +17,10 @@ public class Main_정리 {
 		int term = 0;
 		for (int i = 0; i < n; i++) {
 			StringTokenizer st = new StringTokenizer(br.readLine());
-			int d = Integer.parseInt(st.nextToken()); // 과제 마감일까지 남은 일수
-			int w = Integer.parseInt(st.nextToken()); // 과제의 점수
+			int d = Integer.parseInt(st.nextToken());
+			int w = Integer.parseInt(st.nextToken());
 			list.add(new lecture(d,w,false));
 			term = Math.max(term, d);
-			
 		}
 		Collections.sort(list, new Comparator<lecture>() {
 			@Override
@@ -60,10 +59,6 @@ public class Main_정리 {
 			this.d = d;
 			this.w = w;
 			this.l = l;
-		}
-		@Override
-		public String toString() {
-			return "lecture [d=" + d + ", w=" + w + ", l=" + l + "]";
 		}
 	}
 }
