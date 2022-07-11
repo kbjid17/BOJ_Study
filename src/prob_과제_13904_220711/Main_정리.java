@@ -19,7 +19,7 @@ public class Main_정리 {
 			StringTokenizer st = new StringTokenizer(br.readLine());
 			int d = Integer.parseInt(st.nextToken());
 			int w = Integer.parseInt(st.nextToken());
-			list.add(new lecture(d,w,false));
+			list.add(new lecture(d,w));
 			term = Math.max(term, d);
 		}
 		Collections.sort(list, new Comparator<lecture>() {
@@ -53,12 +53,10 @@ public class Main_정리 {
 	static class lecture {
 		int d;
 		int w;
-		boolean l; // learned
-		public lecture(int d, int w, boolean l) {
+		public lecture(int d, int w) {
 			super();
 			this.d = d;
 			this.w = w;
-			this.l = l;
 		}
 	}
 }
