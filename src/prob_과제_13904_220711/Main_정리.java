@@ -48,7 +48,7 @@ public class Main_정리 {
 			}
 			--term;
 		}
-		System.out.println(score);
+		System.out.println(score); 
 	}
 	static class lecture {
 		int d;
