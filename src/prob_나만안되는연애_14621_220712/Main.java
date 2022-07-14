@@ -45,7 +45,6 @@ public class Main {
 				if(++cnt == V-1) break;
 			}
 		}
-		
 		if(cnt < V-1) {
 			result = -1;
 		}

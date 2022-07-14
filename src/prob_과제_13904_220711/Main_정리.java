@@ -24,7 +24,7 @@ public class Main_정리 {
 		}
 		Collections.sort(list, new Comparator<lecture>() {
 			@Override
-			public int compare(lecture o1, lecture o2) {
+			public int compare(lecture o1, lecture o2) { // [o1, o2]
 				if(o1.d > o2.d) {
 					return -1;
 				}
