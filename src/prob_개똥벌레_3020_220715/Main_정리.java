@@ -32,7 +32,7 @@ public class Main_정리 {
 		Arrays.sort(ar[1]);
 		
 		int min_obstacle = Integer.MAX_VALUE; 
-		int[] height_obstacle = new int[N+1]; 
+		int[] height_obstacle = new int[N+1]; // n개의 장애물을 없애야 하는 구간의 수를 구하는 배열 [0] : 0개의 장애물을 없애야 하는 구간의 수 , [1] : 1개의 장애물의 수를 없애야 하는 구간의 수
 		for (int i = 0; i < H; i++) { 
 			int obstacle = 0; 
 			for (int j = 0; j < 2; j++) {

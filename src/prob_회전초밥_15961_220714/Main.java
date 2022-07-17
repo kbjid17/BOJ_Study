@@ -29,7 +29,7 @@ public class Main {
 		int cnt = 0;
 		int ans = Integer.MIN_VALUE;
 		for (int i = 0; i < K; i++) {
-			d.offer(sushi[i]);
+//			d.offer(sushi[i]);
 			if(selected[sushi[i]] == 0) {
 				cnt++;
 			}
