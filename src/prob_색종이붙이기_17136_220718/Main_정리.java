@@ -28,6 +28,7 @@ public class Main_정리 {
 			}
 			
 		}
+		
 		if(area_cnt == 0) {
 			System.out.println(0);
 			return;
