@@ -15,7 +15,6 @@ public class Main_정리 {
 		dp[0][0] = 1;
 		for (int i = 0; i < n; i++) {
 			int val = Integer.parseInt(br.readLine());
-			
 			if(i == 0) {
 				int idx = val;
 				while(idx <= m) {
@@ -23,26 +22,16 @@ public class Main_정리 {
 					idx += val;
 				}
 			}
-			else { // 두번째 동전부터는
-//				System.out.println(i);
+			else {
 				for (int j = 0; j < dp[i].length; j++) {
 					int idx_2 = j;
 					while(idx_2 >= 0) {
-//						System.out.print(i-1 + " " + idx_2 + "    ");
 						dp[i][j] += dp[i-1][idx_2];
 						idx_2 -= val;
 					}
 				}
 			}
 		}
-//		System.out.println();
-//		for (int i = 0; i < n; i++) {
-//			for (int j = 0; j <= m; j++) {
-//				System.out.print(dp[i][j]+" ");
-//			}
-//			System.out.println();
-//		}
 		System.out.println(dp[n-1][m]);
 	}
-
 }
