@@ -16,9 +16,8 @@ public class Main {
 			s.push(sbss[i]);
 			if(s.size() >= bomb.length()) {
 				int cnt = 0;
-				for (int j = bomb.length(); j >= 1; j--) {
+				for (int j = bomb.length(); j >= 1; j--) { 
 					if(s.get(s.size()-j).equals(bomb.substring(bomb.length()-j, bomb.length()-j+1))) {
-//						System.out.println(bomb.subSequence(bomb.length()-j,bomb.length()-j+1));
 						cnt++;
 					}
 					else {
@@ -42,6 +41,7 @@ public class Main {
 				sb.append(s.pop());
 			}
 		}
+		
 		sb.reverse();
 		System.out.println(sb.toString());
 	}
