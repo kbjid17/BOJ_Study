@@ -54,8 +54,6 @@ public class Main_3 {
 				i--;
 				j--;
 			}
-			
-			
 		}
 		while(!st.isEmpty()) {
 			sb.append(st.pop());

@@ -2,6 +2,7 @@ package prob_LCS2_9252_220813_실패_왜안됨;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Stack;
 
 public class Main_2 {
 	static String[] c1;
@@ -31,12 +32,21 @@ public class Main_2 {
 			}
 		}
 		
+//		for (int i = 0; i <= c1.length; i++) {
+//			for (int j = 0; j <= c2.length; j++) {
+//				System.out.print(dp[i][j] + " ");
+//			}
+//			System.out.println();
+//		}
+		
 		int y = c1.length;
 		int x = c2.length;
 		String str = "";
+		Stack<String> s = new Stack<String>();
 		while(y != 0 && x != 0) {
 			if(c1[y-1].equals(c2[x-1])) {
-				str += c1[y-1];
+//				str += c1[y-1];
+				s.push(c1[y-1]);
 			}
 			
 			if(dp[y-1][x] == dp[y][x]) {
@@ -52,8 +62,11 @@ public class Main_2 {
 		}
 		
 		String ans = "";
-		for (int i = str.length()-1; i >= 0; i--) {
-			ans += str.charAt(i);
+//		for (int i = str.length()-1; i >= 0; i--) {
+//			ans += str.charAt(i);
+//		}
+		while(!s.isEmpty()) {
+			ans += s.pop();
 		}
 		
 		return ans;
