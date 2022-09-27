@@ -15,19 +15,7 @@ public class Main {
 		int b = Integer.parseInt(st.nextToken());
 		int c = Integer.parseInt(st.nextToken());
 		
-		int b_x = a-b;
-		int c_x = a-c;
-		
-		if(b == c) System.out.println(a);
-		else if(b == 0 || c == 0) System.out.println(0);
-		else {
-			if(b > c) {
-				System.out.println(c + b_x);
-			}
-			else if(b < c) {
-				System.out.println(b + c_x);
-			}
-		}
+		System.out.println(Math.min(b, c) + Math.min(a-b, a-c));
 	}
 
 }
