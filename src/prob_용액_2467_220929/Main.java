@@ -1,4 +1,4 @@
-package prob_용액_2467_220929.copy;
+package prob_용액_2467_220929;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
