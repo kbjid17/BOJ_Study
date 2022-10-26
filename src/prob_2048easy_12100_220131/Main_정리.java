@@ -1,4 +1,4 @@
-package prob_2048easy_12100_220131;
+	package prob_2048easy_12100_220131;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
