@@ -1,4 +1,4 @@
-package prob_알고리즘수업_너비우선탐색1_24444_230226.copy;
+package prob_알고리즘수업_너비우선탐색1_24444_230226;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
