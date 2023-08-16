@@ -34,7 +34,7 @@ public class Main {
 	static void bt(int tgtIdx, int srcIdx, int size, long sum) {
 		if(tgtIdx == size) {
 			if(sum == S) {
-				System.out.println(size);
+//				System.out.println(size);
 				ans++;
 			}
 			return;
